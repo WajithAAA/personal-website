@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibale" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Project | Emotion Analysis</title>
+
+    <!-- CSS files -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color-1.css') }}" >
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/4c265cdcbb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="header projects">
+        
+        <!-- main-container start -->
+        <div class="container">
+
+        <nav>
+
+            <a href="{{ url_for('home') }}#home"><img src="{{ url_for('static', filename='images/logo-new.png') }}" class="logo"></a>
+            <ul id="sidemenu">
+                <li><a href="{{ url_for('home') }}#home">Home</a></li>
+                <li><a href="{{ url_for('home') }}#about"></i>About</a></li>
+                <li><a href="{{ url_for('home') }}#services"></i>Services</a></li>
+                <li><a href="{{ url_for('portfolio') }}"></i>Portfolio</a></li>
+                <li><a href="{{ url_for('home') }}#contact"></i>Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+
+<!-- --------- Portfolio ---------  -->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Emotion Analysis</h1>
+
+        <div class="row">
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form action="upload" method="post" enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <input class="btn btn-primary btn-lg" type="file" name="file" id="inputFile1">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input class="btn btn-success btn-lg" type="submit" value="Upload">
+                </div>
+              </div>
+            </form>
+            <br>
+            <h3 class="bg-warning"><STRONG>{{image_caption}}</STRONG></h3>
+            <div class="col-lg-8">
+              <img id="imagen"><br/>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>Other Projects</h2>
+                <a href="#portfolio"><p>View More</p></a>
+            </div>
+        </div>
+        
+        <div class="work-list">
+            <div class="work">
+                <img src="{{ url_for('static', filename='images/img-detect.jpg') }}" >
+                <div class="layer">
+                    <h3>Object detection</h3>
+                    <p>Object detection is a powerful tool with a wide range of applications.
+                        The process involves training a machine learning algorithm on a dataset of
+                        labeled images, and then using the algorithm to identify objects within new,
+                        unlabeled images or videos. </p>
+                        <a href="{{ url_for('image_detect') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{{ url_for('static', filename='images/img-face-prediction-01.jpg') }}" >
+                <div class="layer">
+                    <h3>Face Expression Recognizer</h3>
+                    <p>Face Expression Recognition using deep learning is a technique that allows computers
+                        to automatically recognize facial expressions of individuals, such as happiness, sadness, anger, or surprise.
+                        It has numerous applications in fields such as psychology, entertainment, security, and marketing.</p>
+                        <a href="{{ url_for('face_recognize') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{{ url_for('static', filename='images/my-works-05.jpg') }}" >
+                <div class="layer">
+                    <h3>Stock Price Prediction</h3>
+                    <p>Stock price prediction is the use of machine learning algorithms to analyze historical stock data and make predictions about future stock price movements.
+                        A machine learning model is trained on a dataset of historical stock data and tested to evaluate its accuracy.
+                        Once trained, the model can be used to make predictions about future stock prices to help investors make informed decisions.</p>
+                        <a href="{{ url_for('stock_prediction') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+<!-- ------- footer -------  -->
+
+<div class="copyright">
+    <hr>
+        <ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/wajidmohamed.wajid?mibextid=LQQJ4d"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/invites/contact/?i=14a6021l32mkc&utm_content=3issvjw"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/abdul-wajid-28678519a"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </ul>
+    <p>"Copyright © Wajith 2022. All rights reserved."</p>
+</div>
+
+   
+    <!--JS files-->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+     
+    
+</body>
+
+</html>
